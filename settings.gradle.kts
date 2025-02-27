@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android Base"
 include(":app")
+include(":domain")
+include(":data")
