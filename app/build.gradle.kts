@@ -102,4 +102,7 @@ dependencies {
     // Hilt
     implementation(libs.dagger.hilt)
     ksp(libs.dagger.hilt.android.compiler)
+    // navigation
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 }
