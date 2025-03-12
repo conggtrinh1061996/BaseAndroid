@@ -66,8 +66,10 @@
             android:id="@+id/edtCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search for city or airport"
+            android:hint=""
             android:textSize="22sp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/white" />
     </LinearLayout>

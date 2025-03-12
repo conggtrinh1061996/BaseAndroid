@@ -35,13 +35,13 @@ android {
             applicationId = "com.androiddev.androidprojects.dev"
             resValue("string", "app_name", "Dev Android Projects")
 
-            buildConfigField("String", "DOMAIN_URL", "\"http://BaseURL/\"")
+            buildConfigField("String", "DOMAIN_URL", "\"https://api.openweathermap.org/\"")
             buildConfigField("String", "TOKEN", "\"Token\"")
 
         }
 
         create("prod") {
-            buildConfigField("String", "DOMAIN_URL", "\"http://BaseURL/\"")
+            buildConfigField("String", "DOMAIN_URL", "\"https://api.openweathermap.org/\"")
             buildConfigField("String", "TOKEN", "\"Token\"")
         }
     }

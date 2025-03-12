@@ -21,4 +21,5 @@ abstract class BaseViewModel<State: UIState>: ViewModel() {
     fun setState(reduce: State.() -> State) {
         _uiState.value = currentState.reduce()
     }
+
 }

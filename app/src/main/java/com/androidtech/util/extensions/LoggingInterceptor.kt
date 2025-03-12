@@ -24,7 +24,7 @@ class LoggingInterceptor: Interceptor {
 
         try {
             val response = chain.proceed(modifierRequest)
-            Logger.d("Response body: ${chain.proceed(modifierRequest.newBuilder().build()).body}")
+//            Logger.d("Response body: ${chain.proceed(modifierRequest.newBuilder().build()).body}")
             return response
         } catch (e: IOException) {
             e.printStackTrace()

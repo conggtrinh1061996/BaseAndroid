@@ -11,6 +11,5 @@ import javax.inject.Inject
 class GetDemoListUseCase @Inject constructor(
     private val appRepository: AppRepository
 ): UseCase<None, Demo>() {
-
     override fun run(param: None): Flow<Resource<Demo>> = appRepository.getDemo()
 }

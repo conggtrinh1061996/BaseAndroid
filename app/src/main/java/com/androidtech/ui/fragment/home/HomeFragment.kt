@@ -22,11 +22,9 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         lifecycleScope.launch {
             viewModel.uiState.collect { homeState ->
                 binding.apply {
-                    demoText.text = if (homeState.demo != null) homeState.demo.description else homeState.errorMessage
+                    edtCity.setText( if (homeState.demo != null) homeState.demo.description else homeState.errorMessage)
                 }
             }
         }
-
     }
-
 }
