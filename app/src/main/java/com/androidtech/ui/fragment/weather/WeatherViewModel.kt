@@ -3,7 +3,6 @@ package com.androidtech.ui.fragment.weather
 import androidx.lifecycle.viewModelScope
 import com.androidtech.base.BaseViewModel
 import com.androidtech.base.UIState
-import com.androidtech.domain.extension.None
 import com.androidtech.domain.model.weather.Weather
 import com.androidtech.domain.use_case.GetWeatherListUseCase
 import com.androidtech.util.Logger

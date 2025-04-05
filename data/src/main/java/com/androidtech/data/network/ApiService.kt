@@ -12,15 +12,17 @@ interface ApiService {
     @GET("your_api_end_point")
     suspend fun getAllDemo(): Response<DemoModel>
 
+
     @GET("data/2.5/weather")
     suspend fun getWeather(@Query("q") cityName: String, @Query("appid") id: String,
                            @Query("units") units: String): Response<WeatherModel>
 
-    @GET("location")
+
+    @GET("data/2.5/weather")
     suspend fun getLocationWeather(
-        @Query("lat") latitude: String,
         @Query("lon") longitude: String,
+        @Query("lat") latitude: String,
         @Query("appid") id: String,
         @Query("units") units: String
-    ): Response<com.androidtech.domain.model.weather.Weather>
+    ): Response<WeatherModel>
 }

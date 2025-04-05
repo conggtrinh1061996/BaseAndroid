@@ -3,12 +3,12 @@ package com.androidtech.domain.use_case
 import com.androidtech.domain.extension.Resource
 import com.androidtech.domain.extension.UseCase
 import com.androidtech.domain.model.weather.Weather
-import com.androidtech.domain.repository.WeatherRepository
+import com.androidtech.domain.repository.LocationRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetWeatherListUseCase @Inject constructor(
-    private val weatherRepository: WeatherRepository
+class GetLocationListUseCase @Inject constructor(
+    private val locationRepository: LocationRepository
 ): UseCase<String, Weather>() {
-    override fun run(param: String): Flow<Resource<Weather>> = weatherRepository.getWeather(param)
+    override fun run(param: String): Flow<Resource<Weather>> = locationRepository.getLocation(param, param)
 }

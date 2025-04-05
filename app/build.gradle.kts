@@ -105,4 +105,6 @@ dependencies {
     // navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    //dagger
+    implementation(libs.dagger)
 }

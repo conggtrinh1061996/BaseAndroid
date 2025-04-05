@@ -32,6 +32,7 @@ class HomeViewModel @Inject constructor(
                 success = {
                     setState { copy(demo = it) }
                 },
+
                 error = {
                     setState { copy(errorMessage = "Data not found") }
                 }

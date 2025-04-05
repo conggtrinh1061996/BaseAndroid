@@ -35,6 +35,9 @@ class WeatherFragment: Fragment() {
                     binding.tvTemperature.text = weatherState.main?.temp.toString()
                     binding.city.text = weatherState.name
                     binding.tvCountry.text = weatherState.sys?.country
+
+                    binding.lon.text = weatherState.coord?.lon.toString()
+                    binding.lat.text = weatherState.coord?.lat.toString()
                 }
             }
         }
