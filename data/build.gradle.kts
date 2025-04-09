@@ -53,4 +53,5 @@ dependencies {
     implementation(libs.androidx.runtime.room)
     ksp(libs.androidx.room.compiler)
     implementation (libs.androidx.room.ktx)
+    implementation(libs.pagination.runtime)
 }
