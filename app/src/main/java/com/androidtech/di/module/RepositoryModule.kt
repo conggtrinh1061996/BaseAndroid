@@ -1,13 +1,13 @@
 package com.androidtech.di.module
 
-import android.content.Context
-import com.androidtech.app.MainApplication
 import com.androidtech.data.repository.AppRepositoryImp
 import com.androidtech.data.repository.LocationRepositoryImp
+import com.androidtech.data.repository.PhotoRepositoryImp
 import com.androidtech.data.repository.UserRepositoryImp
 import com.androidtech.data.repository.WeatherRepositoryImp
 import com.androidtech.domain.repository.AppRepository
 import com.androidtech.domain.repository.LocationRepository
+import com.androidtech.domain.repository.PhotoRepository
 import com.androidtech.domain.repository.UserRepository
 import com.androidtech.domain.repository.WeatherRepository
 import dagger.Binds
@@ -30,6 +30,11 @@ interface RepositoryModule {
     fun bindLocationRepository(locationRepository: LocationRepositoryImp): LocationRepository
 
     @Binds
+    fun binPhotoRepository(photoRepositoryImp: PhotoRepositoryImp): PhotoRepository
+
+    @Binds
     @Singleton
     fun bindUserRepository(userRepositoryImp: UserRepositoryImp): UserRepository
+
+
 }

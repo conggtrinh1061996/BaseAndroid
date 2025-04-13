@@ -1,5 +1,6 @@
 [versions]
 agp = "8.7.3"
+coil = "0.7.0"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -12,6 +13,7 @@ lifecycle = "2.8.7"
 constraintlayout = "2.2.1"
 kotlinJvm = "1.9.10"
 ksp = "2.0.0-1.0.22"
+recyclerview = "1.4.0"
 timber = "5.0.1"
 moshi = "1.15.1"
 converterMoshi = "2.9.0"
@@ -28,6 +30,8 @@ navigation = "2.8.8"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "hilt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -58,6 +62,7 @@ dagger-hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" 
 dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigation" }
 navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigation" }
+dagger-compiler = {module = "com.google.dagger:dagger-compiler", version.ref = "hilt"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

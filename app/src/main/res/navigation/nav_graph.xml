@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/user_fragment">
+    app:startDestination="@id/photo_fragment">
 
     <fragment
         android:id="@+id/home_fragment"
@@ -21,4 +21,9 @@
         android:id="@+id/user_fragment"
         tools:layout="@layout/fragment_user"
         android:name="com.androidtech.ui.fragment.user.UserFragment" />
+
+    <fragment
+        android:id="@+id/photo_fragment"
+        tools:layout="@layout/fragment_mars_photo"
+        android:name="com.androidtech.ui.fragment.mars_photo.PhotoFragment" />
 </navigation>

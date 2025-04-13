@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.com.google.dagger.hilt.android)
+
 }
 
 android {
@@ -35,6 +36,7 @@ android {
             applicationId = "com.androiddev.androidprojects.dev"
             resValue("string", "app_name", "Dev Android Projects")
 
+            buildConfigField("String", "PHOTOS_DOMAIN_URL", "\"https://android-kotlin-fun-mars-server.appspot.com/\"")
             buildConfigField("String", "DOMAIN_URL", "\"https://api.openweathermap.org/\"")
             buildConfigField("String", "TOKEN", "\"Token\"")
 
@@ -97,7 +99,7 @@ dependencies {
     // Retrofit
     implementation (libs.com.squareup.retrofit)
     implementation (libs.com.squareup.retrofit.converter.gson)
-    // Skydoves
+    // Skydives
     implementation (libs.com.github.skydoves.sandwich)
     // Hilt
     implementation(libs.dagger.hilt)
@@ -107,4 +109,8 @@ dependencies {
     implementation(libs.navigation.ui)
     //dagger
     implementation(libs.dagger)
+    //compiler
+    ksp(libs.dagger.compiler)
+    //coil
+    implementation(libs.coil)
 }
