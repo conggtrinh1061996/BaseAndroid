@@ -1,5 +1,7 @@
 package com.androidtech.data.repository
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -61,6 +63,10 @@ class NewsRepositoryImp @Inject constructor(
 
     }*/
 
+    /*
+    * get data from api and save to local database
+    * */
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun getNewsPaging(category: String, q: String): Flow<PagingData<Article>> {
         @OptIn(ExperimentalPagingApi::class)
         return Pager(
@@ -83,6 +89,9 @@ class NewsRepositoryImp @Inject constructor(
 
     private fun String.toKey(): String = this.hashCode().toString().replace("-", "m")
 
+    /*
+    * add bookmark to firebase
+    * */
     override suspend fun addBookmark(
         uid: String,
         article: Article
@@ -102,6 +111,9 @@ class NewsRepositoryImp @Inject constructor(
         }
     }
 
+    /*
+    * delete bookmark from firebase
+    * */
     override suspend fun removeBookmark(
         uid: String,
         newsId: String
@@ -121,6 +133,9 @@ class NewsRepositoryImp @Inject constructor(
     }
 
 
+    /*
+    * Get list bookmark from firebase
+    * */
     override suspend fun getAllBookmarks(uid: String): Flow<Result<List<Article>>> = callbackFlow {
         val ref = firebaseDb.getReference("users").child(uid).child("bookmarks")
         val listener = object : ValueEventListener {

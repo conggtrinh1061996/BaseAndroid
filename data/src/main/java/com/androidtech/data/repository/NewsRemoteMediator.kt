@@ -1,5 +1,7 @@
 package com.androidtech.data.repository
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
@@ -25,6 +27,7 @@ class NewsRemoteMediator (
 
     private val articleDao = database.getNewsDao()
     private val removeKeysDao = database.remoteKeyDao()
+    @RequiresApi(Build.VERSION_CODES.O)
     override suspend fun load(
         loadType: LoadType,
         state: PagingState<Int, ArticleEntity>

@@ -8,6 +8,7 @@ import androidx.room.Query
 import com.androidtech.data.model.news.BookmarkEntity
 import kotlinx.coroutines.flow.Flow
 
+/*Dao for bookmark show in bookmarkFragment*/
 @Dao
 interface BookmarkDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

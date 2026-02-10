@@ -8,6 +8,9 @@ import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
+/*
+* data class for news response from NewsApi*/
+
 data class NewsResponse(
     @SerializedName("status")
     val status: String,

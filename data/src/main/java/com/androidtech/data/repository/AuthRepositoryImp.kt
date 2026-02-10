@@ -48,6 +48,9 @@ class AuthRepositoryImp @Inject constructor(
         }
     }
 
+    /*
+    * login with email and password
+    * Get current user from auth*/
     override suspend fun login(email: String, password: String): Result<User> {
         return try {
             firebaseAuth.signInWithEmailAndPassword(email, password).await()
@@ -59,6 +62,8 @@ class AuthRepositoryImp @Inject constructor(
         }
     }
 
+    /*
+    * logout*/
     override suspend fun signOut(): Result<Unit> {
         return try {
             firebaseAuth.signOut()
@@ -68,6 +73,8 @@ class AuthRepositoryImp @Inject constructor(
         }
     }
 
+    /*
+    * implement get current user from auth*/
     @RequiresApi(Build.VERSION_CODES.O)
     override suspend fun getCurrentUser(): Result<User> {
         return try {
@@ -83,6 +90,9 @@ class AuthRepositoryImp @Inject constructor(
             Result.failure(e)
         }
     }
+
+    /*
+    * check user login*/
     override fun isUserLoggedIn(): Boolean {
         return firebaseAuth.currentUser != null
     }

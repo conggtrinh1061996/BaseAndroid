@@ -8,6 +8,8 @@ import androidx.room.Query
 import com.androidtech.data.model.news.ArticleEntity
 import kotlinx.coroutines.flow.Flow
 
+/*
+* Dao for news show in newsFragment*/
 @Dao
 interface ArticleDao {
     @Query("""

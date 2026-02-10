@@ -32,6 +32,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         }
     }
 
+    /*
+    * Quan sát user đã đăng nhập từ mainViewModel
+     */
     private fun observeUser() {
         viewLifecycleOwner.lifecycleScope.launch {
             mainViewModel.uiState.collect { mainState ->
