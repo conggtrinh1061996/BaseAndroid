@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "380305534148",
+    "firebase_url": "https://ohnews-23960-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ohnews-23960",
+    "storage_bucket": "ohnews-23960.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380305534148:android:d724381f2187ee0a632d91",
+        "android_client_info": {
+          "package_name": "com.androiddev.androidprojects.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8KufCSeAyFeTUMWTuTGGbtjGisXjEREk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

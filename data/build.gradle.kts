@@ -1,12 +1,24 @@
+@file:Suppress("DEPRECATION")
+
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
+    //alias(libs.plugins.google.gms.google.services)
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+        freeCompilerArgs.add("-Xopt-in=kotlin.RequiresOptIn")
+    }
 }
 
 android {
     namespace = "com.androidtech.data"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
@@ -34,6 +46,11 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     implementation(project(path = ":domain"))
@@ -53,4 +70,7 @@ dependencies {
     implementation(libs.androidx.runtime.room)
     ksp(libs.androidx.room.compiler)
     implementation (libs.androidx.room.ktx)
+    implementation(libs.androidx.room.paging)
+    //paging
+    implementation(libs.androidx.paging.runtime.ktx)
 }

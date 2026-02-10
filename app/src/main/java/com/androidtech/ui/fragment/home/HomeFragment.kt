@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.androidtech.base.BaseFragment
 import com.androidtech.base.databinding.FragmentHomeBinding
+import com.androidtech.util.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -17,7 +19,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.fetchDemo()
+        /*viewModel.fetchDemo()
 
         lifecycleScope.launch {
             viewModel.uiState.collect { homeState ->
@@ -25,7 +27,8 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
                     demoText.text = if (homeState.demo != null) homeState.demo.description else homeState.errorMessage
                 }
             }
-        }
+        }*/
+
 
     }
 

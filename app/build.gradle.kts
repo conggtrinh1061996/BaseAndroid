@@ -1,13 +1,24 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.com.google.dagger.hilt.android)
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
+    alias(libs.plugins.google.gms.google.services)
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+        freeCompilerArgs.add("-Xopt-in=kotlin.RequiresOptIn")
+    }
 }
 
 android {
     namespace = "com.androidtech.base"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.androidtech.base"
@@ -35,14 +46,14 @@ android {
             applicationId = "com.androiddev.androidprojects.dev"
             resValue("string", "app_name", "Dev Android Projects")
 
-            buildConfigField("String", "DOMAIN_URL", "\"http://BaseURL/\"")
-            buildConfigField("String", "TOKEN", "\"Token\"")
+            buildConfigField("String", "DOMAIN_URL", "\"https://newsapi.org/v2/\"")
+            buildConfigField("String", "TOKEN", "\"e2c8643cf3b84da391633b213c9efac7\"")
 
         }
 
         create("prod") {
-            buildConfigField("String", "DOMAIN_URL", "\"http://BaseURL/\"")
-            buildConfigField("String", "TOKEN", "\"Token\"")
+            buildConfigField("String", "DOMAIN_URL", "\"https://newsapi.org/v2/\"")
+            buildConfigField("String", "TOKEN", "\"e2c8643cf3b84da391633b213c9efac7\"")
         }
     }
 
@@ -67,6 +78,12 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -105,4 +122,10 @@ dependencies {
     // navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    //coil
+    implementation(libs.coil)
+    implementation(libs.coil.network.okhttp)
+    //paging
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.common.ktx)
 }

@@ -17,4 +17,6 @@ dependencies {
     implementation(libs.org.jetbrains.kotlinx.serialization.json)
     // Inject
     implementation(libs.javax.inject)
+    // paging
+    implementation(libs.androidx.paging.common.ktx)
 }

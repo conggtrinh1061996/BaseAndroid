@@ -3,6 +3,7 @@ package com.androidtech.util.extensions
 import com.androidtech.base.BuildConfig
 import com.androidtech.util.Logger
 import okhttp3.Interceptor
+import okhttp3.Protocol
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 import okio.IOException
@@ -24,7 +25,7 @@ class LoggingInterceptor: Interceptor {
 
         try {
             val response = chain.proceed(modifierRequest)
-            Logger.d("Response body: ${chain.proceed(modifierRequest.newBuilder().build()).body}")
+            //Logger.d("Response body: ${chain.proceed(modifierRequest.newBuilder().build()).body}")
             return response
         } catch (e: IOException) {
             e.printStackTrace()
@@ -35,6 +36,7 @@ class LoggingInterceptor: Interceptor {
 
             return Response.Builder()
                 .request(modifierRequest)
+                .protocol(Protocol.HTTP_2)
                 .code(defaultErrorCode)
                 .message(errorMessage)
                 .body("$e".toResponseBody(null))

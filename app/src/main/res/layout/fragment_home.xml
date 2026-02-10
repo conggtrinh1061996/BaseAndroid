@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <!--<androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/demoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,6 +13,22 @@
         android:text="Demo"
         android:gravity="center"
         android:layout_marginHorizontal="12dp"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true" />-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:text="Demo" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_meal"
+        android:padding="20dp"
+        android:layout_marginTop="50dp" />
+
 
 </RelativeLayout>
